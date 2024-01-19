@@ -7,9 +7,14 @@ import useData from "../useData";
 const Shopping = () => {
   const { data, error, isLoading } = useData();
 
+  // const addToCartHandler = () => {
+  //   const productExist
+
+  // }
+
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
-  console.log(data);
+  // console.log(data);
   return (
     <SimpleGrid
       spacing={4}
@@ -21,7 +26,7 @@ const Shopping = () => {
             <Heading size="md" noOfLines={1}> {item.title}</Heading>
           </CardHeader>
           <CardBody>
-            <Image boxSize="100px" objectFit="cover" src={item.image} />
+            <Image boxSize="100px" objectFit="fit" src={item.image} />
           </CardBody>
           <CardFooter>
             <Button>View here</Button>
