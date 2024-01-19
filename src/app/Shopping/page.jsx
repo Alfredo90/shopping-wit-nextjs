@@ -1,7 +1,9 @@
 import React from "react";
+import useData from "../useData";
 
 const Shopping = () => {
-  return <div> Shopping</div>;
+  const { data } = useData();
+  return <div>{data}</div>;
 };
 
 export default Shopping;

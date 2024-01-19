@@ -1,14 +1,11 @@
-"use client";
-import {useSWR}
-
-// import MainPage from "./components/MainPage";
+import MainPage from "./MainPage/page.jsx";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      {/* <MainPage /> */}
+      <MainPage />
     </main>
   );
 }
