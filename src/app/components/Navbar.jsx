@@ -12,10 +12,10 @@ import {
 
 const Navbar = () => {
   return (
-    <Container maxWidth="100%" borderWidth="2px">
+    <Container maxWidth="100%" borderWidth="1px" >
       <Flex justify="space-evenly" align="center">
         <Box>
-          <Heading>Logo</Heading>
+          <Heading >Logo</Heading>
         </Box>
         <Spacer />
         <Box>
