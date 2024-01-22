@@ -8,8 +8,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-// import Link from "next/link";
-
 const Navbar = () => {
   return (
     <Container maxWidth="100%" borderWidth="1px" >
