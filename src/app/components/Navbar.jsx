@@ -19,7 +19,7 @@ const Navbar = () => {
         <Box>
           <Flex gap="10">
             <Text>
-              <Link href="/MainPage">Home</Link>
+              <Link href="/">Home</Link>
             </Text>
             <Text>
               <Link href="/Shopping">Shopping</Link>

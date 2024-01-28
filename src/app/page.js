@@ -1,12 +1,12 @@
 'use client'
 
-import MainPage from "./MainPage/page.jsx";
+// import Layout from './layout.js'
 
 export default function Home() {
 
   return (
     <main>
-      <MainPage />
+      <h1>home</h1>
     </main>
   );
 }

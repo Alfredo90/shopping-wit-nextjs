@@ -1,22 +1,31 @@
 'use client'
 
-import { Button, Card, CardBody, CardFooter, CardHeader, Heading, Image, SimpleGrid } from '@chakra-ui/react'
+import { Button, Card, CardBody, CardFooter, CardHeader, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 
+import {CartContext} from '../providers'
+import { useContext } from 'react';
 import useData from '../useData';
 
 const Shopping = () => {
   const { data, error, isLoading } = useData();
+  const {cartItems, setCartItems} = useContext(CartContext)
+  // console.log(data)
 
 
-  // const addToCart = (product) => {
-  //   const productExist = data?.find((item) => item?.id === product.id)
-  //   console.log(productExist)
-  //   if(productExist){
-  //     setCartItems({...cartItems})
-  //   }else{
-  //     setCartItems({...cartItems, product})
-  //   }
-  // }
+
+  const addToCart = (product) => {
+    const productExist = cartItems?.map((item) => item?.id === product.id)
+    console.log(productExist)
+    if(productExist){
+      setCartItems({...cartItems})
+    }else{
+      setCartItems({...cartItems, product})
+    }
+  }
+
+  // const addItem = () => addToCart(data?.id)
+
+  // console.log(addToCart(data?.id))
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
@@ -32,10 +41,10 @@ const Shopping = () => {
             <Heading size="md" noOfLines={1}> {item.title}</Heading>
           </CardHeader>
           <CardBody>
-            <Image boxSize="100px" objectFit="fit" src={item.images[1]} />
+            <Image boxSize="100px" objectFit="fit" src={item.image} />
           </CardBody>
           <CardFooter>
-            <Button >Add To Cart</Button>
+            <Button onClick={() => addToCart(data?.id)} >Add To Cart</Button>
           </CardFooter>
         </Card>
       ))}
